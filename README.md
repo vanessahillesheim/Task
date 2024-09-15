@@ -35,28 +35,30 @@ cd task-app
 3. **Instale as Dependências**:
 npm install
 
-4. **Configurar o Firebase**:
-4.1. Crie um projeto no Firebase Console.
-4.2. Configure o Firestore e copie as credenciais do projeto.
-4.3. Atualize o arquivo src/config/firebaseconfig.js com suas credenciais do Firebase:
+## Configurar o Firebase
 
+1. Crie um projeto no [Firebase Console](https://console.firebase.google.com/).
+2. Configure o Firestore e copie as credenciais do projeto.
+3. Atualize o arquivo `src/config/firebaseconfig.js` com suas credenciais do Firebase:
+
+   ```javascript
    // src/config/firebaseconfig.js
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+   import { initializeApp } from "firebase/app";
+   import { getFirestore } from "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_AUTH_DOMAIN",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_STORAGE_BUCKET",
-  messagingSenderId: "SEU_MESSAGING_SENDER_ID",
-  appId: "SEU_APP_ID"
-};
+   const firebaseConfig = {
+     apiKey: "SUA_API_KEY",
+     authDomain: "SEU_AUTH_DOMAIN",
+     projectId: "SEU_PROJECT_ID",
+     storageBucket: "SEU_STORAGE_BUCKET",
+     messagingSenderId: "SEU_MESSAGING_SENDER_ID",
+     appId: "SEU_APP_ID"
+   };
 
-const app = initializeApp(firebaseConfig);
-const database = getFirestore(app);
+   const app = initializeApp(firebaseConfig);
+   const database = getFirestore(app);
 
-export default database;
+   export default database;
 
 5. **Executar o projeto**:
 npm start
